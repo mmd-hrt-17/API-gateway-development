@@ -1,0 +1,19 @@
+
+services:
+
+  service3:
+    build: ./services/service3
+    container_name: service3
+    restart: always
+    expose:
+      - "8003"
+    ports:
+      - "8003:8003"
+
+    networks:
+      - ecommerce-net
+
+
+networks:
+  ecommerce-net:
+    driver: bridge
